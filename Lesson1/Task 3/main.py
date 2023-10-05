@@ -1,10 +1,10 @@
 def userInput(text):
     return input(text)
 
-def concertToC(f):
+def convertToC(f):
     print(int((f - 32) / 1.8))
 
-def cinvertToF(c):
+def convertToF(c):
     print(int((c * 1.8) + 32))
 
 def calc(answear):
