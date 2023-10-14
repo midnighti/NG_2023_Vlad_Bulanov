@@ -1,17 +1,17 @@
 def userInput(text):
     return input(text)
 
-def c(f):
+def convertToC(f):
     print(int((f - 32) / 1.8))
 
-def f(c):
+def convertToF(c):
     print(int((c * 1.8) + 32))
 
 def calc(answear):
     if answear == "c" or answear == "C":
-        print(c(int(userInput('Vvedite temperatyry v F'))))
+        print(convertToC(int(userInput('Vvedite temperatyry v F'))))
     if answear == "f" or answear == "F":
-        print(f(int(userInput('Vvedite temperatyry v C'))))
+        print(convertToF(int(userInput('Vvedite temperatyry v C'))))
 
 
 def calcMode(text):
