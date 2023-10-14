@@ -1,3 +1,5 @@
+from prettytable import PrettyTable
+
 def userInputNum():
     num = int(input("Введите число - "))
     return num
@@ -30,17 +32,10 @@ def isPrime(lst):
 def createTable():
     th = ["nums", "divedeNums", "primeNums"]
     td = [listOfNums(userInputNum()), divide(), isPrime(listOfNums())]
-    stop = 2
-    i = 0
-    cell = len(th)
-    for cell in td:
-        print("<td>%s</td>\n" % cell)
-        if i == stop: 
-            print ("</tr><tr>\n")
-            stop == i + 3
-        i += 1
-def main():
-    print(createTable())
+    columns = len(th)
+    table = PrettyTable(th)
+    while td:
+        table.add_row(td[:columns])
+        td = td[columns:]
 
-if __name__ == "__main__":
-    main()
+print(createTable())
