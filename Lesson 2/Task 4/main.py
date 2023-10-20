@@ -1,5 +1,5 @@
 def userInputText():
-   text = input("Введите строку - ")
+   text = input("enter str - ")
    return text
 
 def vowel(text):
