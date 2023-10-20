@@ -1,5 +1,5 @@
 def userInputList():
-    lst = [a for a in input("Введите список - ").split()]
+    lst = [a for a in input("enter list - ").split()]
     return lst
 
 def checkInt(lst):
@@ -16,8 +16,8 @@ def checkInt(lst):
 def main():
     lst = userInputList()
     nums, noNums = checkInt(lst)
-    print("Это числа - ", nums)
-    print("Это не числа - ", noNums)
+    print("Numbers - ", nums)
+    print("!numbers - ", noNums)
 
 if __name__ == "__main__":
     main()
