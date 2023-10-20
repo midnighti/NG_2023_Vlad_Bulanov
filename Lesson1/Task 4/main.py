@@ -2,11 +2,11 @@ import math
 
 
 def userInputNum():
-    a = int(input("Введите число - "))
+    a = int(input("enter number - "))
     return a
 
 def userInputCalcMode():
-    mode = input("Выберите дейсвие: +, -, *, /, корень, степень - ")
+    mode = input("choose aperation: +, -, *, /, sqrt, degree - ")
     return mode
 
 
@@ -39,9 +39,9 @@ def operation(a, b, mode):
             return multiply(a, b)
         case "/":
             return devide(a, b)
-        case "корень":
+        case "sqrt":
             return sqrt(a, b)
-        case "степень":
+        case "degree":
             return degree(a, b)
         
 
