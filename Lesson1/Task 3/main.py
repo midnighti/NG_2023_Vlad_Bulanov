@@ -1,4 +1,4 @@
-def userInput(text):
+rdef userInput(text):
     return input(text)
 
 def convertToC(f):
@@ -9,16 +9,16 @@ def convertToF(c):
 
 def calc(answear):
     if answear == "c" or answear == "C":
-        print(convertToC(int(userInput('Vvedite temperatyry v F'))))
+        print(convertToC(int(userInput('enter temperature in F'))))
     if answear == "f" or answear == "F":
-        print(convertToF(int(userInput('Vvedite temperatyry v C'))))
+        print(convertToF(int(userInput('enter temperature in C'))))
 
 
 def calcMode(text):
     return userInput(text)
 
 def main():
-    print(calc(calcMode('Введи С/с - если хочешь перевести в градусы Цельсия/nВведи F/f - если хочешь перевести в градусы Фаренгейта')))
+    print(calc(calcMode('Enter S/s - if you want to convert to Celsius/nEnter F/f - if you want to convert to Fahrenheit')))
 
 if __name__ == "__main__":
     main()
