@@ -1,2 +1,2 @@
-userInputList = set([a for a in input().split()])
+userInputList = set([element for element in input().split()])
 print(userInputList)
