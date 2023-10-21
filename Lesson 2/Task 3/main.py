@@ -9,16 +9,16 @@ def listOfNums(num):
     for element in range(num + 1):
         if element == 0:
             continue
-        lst.append(element[num] - element)
+        lst.append(num - element)
     return lst 
 
-def divide():
-    lst1, lst2 = listOfNums()
+def divide(num):
+    lst = listOfNums(num)
     dividedList = []
-    for element1 in range(len(lst1)):
-        for element2 in range(len(lst2)):
-            if lst1[element1] % element2 == 0:
-                dividedList.append(lst1[element1])
+    for element1 in range(len(lst)):
+        for element2 in range(len(lst)):
+            if lst[element1] % element2 == 0:
+                dividedList.append(lst[element1])
             else:
                 continue
     return dividedList
