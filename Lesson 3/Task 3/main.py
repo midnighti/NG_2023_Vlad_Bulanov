@@ -37,9 +37,9 @@ data = json.loads(json_data)
 def valueByKey(data, key):
     if key in data:
         return data[key]
-    for k, v in data.items():
-        if isinstance(v, dict):
-            result = valueByKey(v, key)
+    for key, value in data.items():
+        if isinstance(value, dict):
+            result = valueByKey(value, key)
             if result is not None:
                 return result
 
