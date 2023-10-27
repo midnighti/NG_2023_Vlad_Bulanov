@@ -4,11 +4,11 @@ def userInputText():
 
 def vowel(text):
    text = list(text)
-   ans = []
-   for i in text:
-       if i in 'aeiouAEIOU':
-          ans.append(i)
-   return str(''.join(ans))
+   listOfLetters = []
+   for element in text:
+       if element in 'aeiouAEIOU':
+          listOfLetters.append(element)
+   return set(str(''.join(listOfLetters)))
 
 def main():
    print(vowel(userInputText()))

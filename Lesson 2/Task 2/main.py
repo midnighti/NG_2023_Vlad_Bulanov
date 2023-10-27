@@ -1,23 +1,23 @@
 def userInputList():
-    lst = [a for a in input("enter list - ").split()]
-    return lst
+    userList = [element for element in input("enter list - ").split()]
+    return userList
 
-def checkInt(lst):
-    nums = []
-    noNums = []
-    for element in lst:
+def checkInt(userList):
+    listOfNumbers = []
+    listOfLetters = []
+    for element in userList:
         try: 
             int(element)
-            nums.append(element)
+            listOfNumbers.append(element)
         except:
-            noNums.append(element)
-    return nums, noNums
+            listOfLetters.append(element)
+    return listOfNumbers, listOfLetters
 
 def main():
-    lst = userInputList()
-    nums, noNums = checkInt(lst)
-    print("Numbers - ", nums)
-    print("!numbers - ", noNums)
+    userList = userInputList()
+    listOfNumbers, listOfLetters = checkInt(userList)
+    print("Numbers - ", listOfNumbers)
+    print("!numbers - ", listOfLetters)
 
 if __name__ == "__main__":
     main()

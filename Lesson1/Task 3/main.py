@@ -1,24 +1,21 @@
-rdef userInput(text):
+def userInput(text):
     return input(text)
 
 def convertToC(f):
-    print(int((f - 32) / 1.8))
+    print(f"Temperature in Celsius is {int((f - 32) / 1.8)}")
 
 def convertToF(c):
-    print(int((c * 1.8) + 32))
+    print(f"Temperature in Fahrenheit is {int((c * 1.8) + 32)}")
 
-def calc(answear):
+def calc():
+    answear = userInput('Enter S/s - if you want to convert to Celsius. Enter F/f - if you want to convert to Fahrenheit: ') 
     if answear == "c" or answear == "C":
-        print(convertToC(int(userInput('enter temperature in F'))))
+        print(convertToC(int(userInput('enter temperature in F: '))))
     if answear == "f" or answear == "F":
-        print(convertToF(int(userInput('enter temperature in C'))))
-
-
-def calcMode(text):
-    return userInput(text)
+        print(convertToF(int(userInput('enter temperature in C: '))))
 
 def main():
-    print(calc(calcMode('Enter S/s - if you want to convert to Celsius/nEnter F/f - if you want to convert to Fahrenheit')))
+    print(calc())
 
 if __name__ == "__main__":
     main()

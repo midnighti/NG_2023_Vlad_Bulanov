@@ -1,4 +1,5 @@
 import math
+import gmpy2
 
 
 def userInputNum():
@@ -23,7 +24,7 @@ def devide(a, b):
     return print(a / b)
 
 def sqrt(a, b):
-    return print(math.sqrt(a), math.sqrt(b))
+    return print(gmpy2.root(a, b))
 
 def degree(a, b):
     return print(pow(a, b))
