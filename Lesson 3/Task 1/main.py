@@ -1,30 +1,36 @@
-def openFile():
-    return open('text.txt' , 'r')
+def userInputFileName():
+    return input('Enter file name: ')
+
+def openFile(fileName):
+    return open(fileName, 'r')
 
 def arrayOfFileLines(file):
-    arr = list(file.readline())
-    return arr
+    arrayOfFileLines = list(file.readline())
+    return arrayOfFileLines
 
-# print(arrayOfFileLines(openFile()))
-
-def quantity(arr):
-    value = len(arr)
+def quantity(arrayOfFileLines):
+    value = len(arrayOfFileLines)
     return value
 
-def numberOfUniqueElements(arr):
+def numberOfUniqueElements(arrayOfFileLines):
     charCount = {}
 
-    for char in arr:
-        if char in charCount:
-            charCount[char] += 1
-        else:
-            charCount[char] = 1
+    for line in arrayOfFileLines: 
+        for char in line:
+            if char in charCount:
+                charCount[char] += 1
+            else:
+                charCount[char] = 1
+
     for char, count in charCount.items():
         print(f"character '{char}' occurs {count} times.")
 
 def main():
-    print(f"quantity elements in this file is {quantity(arrayOfFileLines(openFile()))}")
-    numberOfUniqueElements(arrayOfFileLines(openFile()))
+    fileName = userInputFileName()
+    file = openFile(fileName)
+    lines = arrayOfFileLines(file)
+    print(f"quantity elements in this file is {quantity(lines)}")
+    numberOfUniqueElements(lines)
 
 if __name__ == "__main__":
     main()
