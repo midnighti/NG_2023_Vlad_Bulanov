@@ -1,1 +1,1 @@
-print(set([element for element in input().split()]))
+print(set([element for element in input("Enter any letters, words, anything! ").split()]))
