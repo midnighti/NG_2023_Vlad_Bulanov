@@ -4,20 +4,18 @@ def userInputList():
 
 def checkInt(userList):
     listOfNumbers = []
-    listOfLetters = []
     for element in userList:
         try: 
             int(element)
             listOfNumbers.append(element)
         except:
-            listOfLetters.append(element)
-    return listOfNumbers, listOfLetters
+            continue
+    return listOfNumbers
 
 def main():
     userList = userInputList()
-    listOfNumbers, listOfLetters = checkInt(userList)
+    listOfNumbers = checkInt(userList)
     print("Numbers - ", listOfNumbers)
-    print("!numbers - ", listOfLetters)
 
 if __name__ == "__main__":
     main()
