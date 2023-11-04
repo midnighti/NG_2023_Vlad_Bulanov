@@ -1,21 +1,13 @@
-def userInput(text):
-    return input(text)
+def convert():
+    answear  = input('Enter C/c - if you want to convert to Celsius. Enter F/f - if you want to convert to Fahrenheit: ').lower()
+    match answear:
+        case "c":
+            tempInCalsius = float(input('enter temperature in F: '))
+            print(f"Temperature in Celsius is {float((tempInCalsius - 32) / 1.8)}")
+        case "f":
+            tempInFahrenheit = float(input('enter temperature in C: '))
+            print(f"Temperature in  is {float((tempInFahrenheit * 1.8) + 32)}")
+    if answear != "c" and answear != "f":
+        print('I do not understand what you have written')
 
-def convertToC(f):
-    print(f"Temperature in Celsius is {int((f - 32) / 1.8)}")
-
-def convertToF(c):
-    print(f"Temperature in Fahrenheit is {int((c * 1.8) + 32)}")
-
-def calc():
-    answear = userInput('Enter S/s - if you want to convert to Celsius. Enter F/f - if you want to convert to Fahrenheit: ') 
-    if answear == "c" or answear == "C":
-        print(convertToC(int(userInput('enter temperature in F: '))))
-    if answear == "f" or answear == "F":
-        print(convertToF(int(userInput('enter temperature in C: '))))
-
-def main():
-    print(calc())
-
-if __name__ == "__main__":
-    main()
+convert()
