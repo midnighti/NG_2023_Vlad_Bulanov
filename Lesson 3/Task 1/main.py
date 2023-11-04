@@ -1,9 +1,3 @@
-def userInputFileName():
-    return input('Enter file name: ')
-
-def openFile(fileName):
-    return open(fileName, 'r')
-
 def arrayOfFileLines(file):
     arrayOfFileLines = list(file.readline())
     return arrayOfFileLines
@@ -26,11 +20,9 @@ def numberOfUniqueElements(arrayOfFileLines):
         print(f"character '{char}' occurs {count} times.")
 
 def main():
-    fileName = userInputFileName()
-    file = openFile(fileName)
+    file = open(input('Enter file name: '), 'r')
     lines = arrayOfFileLines(file)
     print(f"quantity elements in this file is {quantity(lines)}")
     numberOfUniqueElements(lines)
 
-if __name__ == "__main__":
-    main()
+main()
