@@ -3,47 +3,47 @@ import gmpy2
 
 
 def userInputNum():
-    a = int(input("enter number - "))
-    return a
+    value = int(input("enter number - "))
+    return value
 
 def userInputCalcMode():
     mode = input("choose aperation: +, -, *, /, sqrt, degree - ")
     return mode
 
 
-def add(a, b):
-    return print(a + b)
+def add(valueA, valueB):
+    return print(valueA + valueB)
 
-def subtract(a, b):
-    return print(a - b)
+def subtract(valueA, valueB):
+    return print(valueA - valueB)
 
-def multiply(a, b):
-    return print(a * b)
+def multiply(valueA, valueB):
+    return print(valueA * valueB)
 
-def devide(a, b):
-    return print(a / b)
+def devide(valueA, valueB):
+    return print(valueA / valueB)
 
-def sqrt(a, b):
-    return print(gmpy2.root(a, b))
+def sqrt(valueA, valueB):
+    return print(gmpy2.root(valueA, valueB))
 
-def degree(a, b):
-    return print(pow(a, b))
+def degree(valueA, valueB):
+    return print(pow(valueA, valueB))
 
 
-def operation(a, b, mode):
+def operation(valueA, valueB, mode):
     match mode:
         case "+":
-            return add(a, b)
+            return add(valueA, valueB)
         case "-":
-            return subtract(a, b)
+            return subtract(valueA, valueB)
         case "*":
-            return multiply(a, b)
+            return multiply(valueA, valueB)
         case "/":
-            return devide(a, b)
+            return devide(valueA, valueB)
         case "sqrt":
-            return sqrt(a, b)
+            return sqrt(valueA, valueB)
         case "degree":
-            return degree(a, b)
+            return degree(valueA, valueB)
         
 
 def main():
