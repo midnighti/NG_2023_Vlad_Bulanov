@@ -6,7 +6,7 @@ def convert():
             print(f"Temperature in Celsius is {float((tempInCalsius - 32) / 1.8)}")
         case "f":
             tempInFahrenheit = float(input('enter temperature in C: '))
-            print(f"Temperature in  is {float((tempInFahrenheit * 1.8) + 32)}")
+            print(f"Temperature in Fahrenheit is {float((tempInFahrenheit * 1.8) + 32)}")
     if answear != "c" and answear != "f":
         print('I do not understand what you have written')
 
