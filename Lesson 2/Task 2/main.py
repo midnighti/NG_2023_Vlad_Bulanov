@@ -1,23 +1,11 @@
 def userInputList():
-    userList = [element for element in input("enter list - ").split()]
+    userList = [element for element in input("Enter list - ").split()]
     return userList
 
 def checkInt(userList):
-    listOfNumbers = []
-    for element in userList:
-        try: 
-            int(element)
-            listOfNumbers.append(element)
-        except:
-            continue
+    listOfNumbers = [element for element in userList if element.isdigit()]
     return listOfNumbers
 
-def main():
-    userList = userInputList()
-    listOfNumbers = checkInt(userList)
-    print("Numbers - ", listOfNumbers)
-
-if __name__ == "__main__":
-    main()
-
-
+userList = userInputList()
+listOfNumbers = checkInt(userList)
+print("Numbers -", listOfNumbers)
