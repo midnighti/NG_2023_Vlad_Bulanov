@@ -6,6 +6,5 @@ def checkInt(userList):
     listOfNumbers = [element for element in userList if element.isdigit()]
     return listOfNumbers
 
-userList = userInputList()
-listOfNumbers = checkInt(userList)
+listOfNumbers = checkInt(userInputList())
 print("Numbers -", listOfNumbers)
