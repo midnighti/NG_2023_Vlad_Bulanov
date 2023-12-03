@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Game</title>
+    <style>
+        #game-board {
+            font-size: 24px;
+            line-height: 1.2;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post" action="{{ url_for('move') }}">
+        <button type="submit" name="direction" value="up">Up</button>
+    </form>
+    <form method="post" action="{{ url_for('move') }}">
+        <button type="submit" name="direction" value="left">Left</button>
+        <button type="submit" name="direction" value="right">Right</button>
+    </form>
+    <form method="post" action="{{ url_for('move') }}">
+        <button type="submit" name="direction" value="down">Down</button>
+    </form>
+
+    <div id="game-board">{{ game_board }}</div>
+</body>
+</html>
