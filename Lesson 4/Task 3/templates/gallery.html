@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+
+    <img id="galleryImage" src="{{ image }}" alt="Gallery Image" style="max-width: 100%">
+
+    <button onclick="showImage('prev')">Previous</button>
+    <button onclick="showImage('next')">Next</button>
+
+    <script>
+        function showImage(direction) {
+            fetch('/image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    direction: direction
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('galleryImage').src = data.image;
+            });
+        }
+    </script>
+</body>
+</html>
