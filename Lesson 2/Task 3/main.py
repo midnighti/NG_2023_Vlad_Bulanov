@@ -1,41 +1,33 @@
-from prettytable import PrettyTable
+def find_divisors(num):
+    return [element for element in range(1, num + 1) if num % element == 0]
 
-def userInputNum():
-    num = int(input("Введите число - "))
-    return num
+def is_prime(num):
+    return len(find_divisors(num)) == 2
 
-def listOfNums(num):
-    lst = []
-    for element in range(num + 1):
-        if element == 0:
-            continue
-        lst.append(num - element)
-    return lst 
+def generate_table(limit):
+    return [(num, find_divisors(num)) for num in range(1, limit + 1)]
 
-def divide(num):
-    lst = listOfNums(num)
-    dividedList = []
-    for element1 in range(len(lst)):
-        for element2 in range(len(lst)):
-            if lst[element1] % element2 == 0:
-                dividedList.append(lst[element1])
-            else:
-                continue
-    return dividedList
+def main():
+    try:
+        limit = int(input("Enter the upper limit for the table: "))
+        if limit < 1:
+            print("Please enter a number greater than 0.")
+            return
 
-def isPrime(lst):
-    if lst % lst == 0 and lst != 0:
-        return print("Prime")
-    else:
-        return print("No prime")
+        table = generate_table(limit)
 
-def createTable():
-    th = ["nums", "divedeNums", "primeNums"]
-    td = [listOfNums(userInputNum()), divide(), isPrime(listOfNums())]
-    columns = len(th)
-    table = PrettyTable(th)
-    while td:
-        table.add_row(td[:columns])
-        td = td[columns:]
+        print("\nTable of numbers and their divisors:")
+        print("Number | Divisors")
+        print("-" * 20)
+        for num, divisors in table:
+            print(f"{num}      | {', '.join(map(str, divisors))}")
 
-print(createTable())
+        primes = [num for num in range(1, limit + 1) if is_prime(num)]
+        print("\nPrime numbers:")
+        print(", ".join(map(str, primes)))
+
+    except ValueError:
+        print("Please enter a valid number.")
+
+if __name__ == "__main__":
+    main()
